@@ -2,3 +2,44 @@ git checkout a1e8fb5 hello.py
 git checkout <Commit ID>
 git revert <commit>
 Git pull = git fetch + git merge
+working dir --staging area -- Local Repo -- remote repo
+
+ What is Git stash? (stack of unfinished changes)
+ Often, when you’ve been working on part of your project, things are in a messy state and you want to switch branches 
+ for sometime to work on something else. The problem is, you don’t want to do a commit of half-done work just so you 
+ can get back to this point later. The answer to this issue is Git stash.
+ 
+ Stashing takes your working directory that is, your modified tracked files and staged changes and saves it on a stack of
+ unfinished changes that you can reapply at any time.
+ 
+ What is Git stash drop?
+ Git ‘stash drop’ command is used to remove the stashed item. It will remove the last added stash item by default, and 
+ it can also remove a specific item if you include it as an argument.
+ 
+ git stash list --> list all items in stack  example
+ stash@{0}: WIP on master: 049d078 added the index file
+stash@{1}: WIP on master: c264051 Revert “added file_size”
+stash@{2}: WIP on master: 21d80a5 added number to log
+
+if you want to remove a item fro stack use
+git stash drop stash@{0}
+
+How do you find a list of files that has changed in a particular commit?
+git diff-tree -r commit_ID
+
+-r flag makes the command list individual files
+
+What does commit object contains?
+A set of files, representing the state of a project at a given point of time
+Reference to parent commit objects
+An SHAI name, a 40 character string that uniquely identifies the commit object.
+
+How can you create a repository in Git?
+Git init
+
+refs/heads/master ---> refs/of/master
+ 
+ 
+ 
+ 
+ 
