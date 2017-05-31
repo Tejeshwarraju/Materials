@@ -1,0 +1,4 @@
+git checkout a1e8fb5 hello.py
+git checkout <Commit ID>
+git revert <commit>
+Git pull = git fetch + git merge
