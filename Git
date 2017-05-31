@@ -4,9 +4,16 @@ git revert <commit>
 Git pull = git fetch + git merge
 working dir --staging area -- Local Repo -- remote repo
 git merge master development
-git push -u origin development
+git push -u origin development ---> push changes to remote repo Development branch
+git diff-tree -r commit_ID ---> list of files that has changed in a particular commit
+git rebase development master
+git rebase -i HEAD~3 ---> squash last N commits into a single commit
+git branch --merged ---> check merged branches
+git branch --no-merged ---> check unmerged branches
 
- What is Git stash? (stack of unfinished changes)
+
+What is Git stash? (stack of unfinished changes)
+ 
  Often, when you’ve been working on part of your project, things are in a messy state and you want to switch branches 
  for sometime to work on something else. The problem is, you don’t want to do a commit of half-done work just so you 
  can get back to this point later. The answer to this issue is Git stash.
