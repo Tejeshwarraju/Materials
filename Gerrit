@@ -12,7 +12,7 @@ Most distributions come with Java today. Do you already have Java installed?
  $ sudo su gerrit2
  If you don’t have root privileges you could skip this step and run Gerrit as your own user as well.
  
- Download --> https://www.gerritcodereview.com/download/gerrit-2.2.2.war
+Download --> https://www.gerritcodereview.com/download/gerrit-2.2.2.war
 Install the war file --->
 java -jar gerrit.war init --batch -d ~/gerrit_testsite
 Once completed you can review ur settings in the file below
@@ -39,5 +39,40 @@ gerrit2@host:~$ ~/gerrit_testsite/bin/gerrit.sh restart
   gerrit2@host:~$ git config -f ~/gerrit_testsite/etc/gerrit.config --add http.proxy http://proxy:8080
   gerrit2@host:~$ git config -f ~/gerrit_testsite/etc/gerrit.config --add http.proxyUsername <\username\>
   gerrit2@host:~$ git config -f ~/gerrit_testsite/etc/gerrit.config --add http.proxyPassword <\password\>
+  
+  
+  The first user to sign-in and register an account will be automatically placed into the fully privileged 
+  Administrators group, permitting server management over the web and over SSH. Subsequent users will be automatically
+  registered as unprivileged users.
+  
+  Once signed in as your user, you find a little wizard to get you started. The wizard helps you fill out:
+
+Real name (visible name in Gerrit)
+
+Register your email (it must be confirmed later)
+
+Select a username with which to communicate with Gerrit over ssh+git. Note that once saved, the username cannot be changed.
+
+The server will ask you for an RSA public key. That’s the key we generated above, and it’s time to make sure that Gerrit knows about our new key and can identify us by it.
+Copy the string starting with ssh-rsa to your clipboard and then paste it into the box for RSA keys
+
+Verify that the ssh connection works for you. ---> ssh user@localhost -p 29418
+
+New project from scratch
+user@host:~$ ssh -p 29418 user@localhost gerrit create-project demo-project --empty-commit
+
+to create a project from existing project
+user@host:~$ ssh -p 29418 user@localhost gerrit create-project demo-project
+This will create a repository that you can clone to work with.
+
+
+upload the previous history --> git push ssh://user@localhost:29418/demo-project *:*
+Download a local clone of the repository and move into it --> user@host:~$ git clone ssh://user@localhost:29418/demo-project
+
+Usually when you push to a remote git, you push to the reference '/refs/heads/branch', but when working with Gerrit you have 
+to push to a virtual branch representing "code review before submission to branch". This virtual name space is known 
+as /refs/for/<branch>. user@host:~/demo-project$ git push origin HEAD:refs/for/master
+
+  
   
   
