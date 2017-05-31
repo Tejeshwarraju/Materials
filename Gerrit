@@ -17,11 +17,10 @@ Install the war file --->
 java -jar gerrit.war init --batch -d ~/gerrit_testsite
 Once completed you can review ur settings in the file below
 you can review your settings in the file '$site_path/etc/gerrit.config'
-
-
-gerrit2@host:~$ ~/gerrit_testsite/bin/gerrit.sh restart
-  or
- ~/gerrit_testsite/bin/gerrit.sh start
+change the url in ~/gerrit_testsite/etc/gerrit.config to public DNS:8080/
+and cd to home directory and stop and start service
+ ~/gerrit_testsite/bin/gerrit.sh stop
+ ~/gerrit_testsite/bin/gerrit.sh startt
  
  Check whether there are any ssh keys already. You’re looking for two files, id_rsa and id_rsa.pub.
  
