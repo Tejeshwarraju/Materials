@@ -3,6 +3,8 @@ git checkout <Commit ID>
 git revert <commit>
 Git pull = git fetch + git merge
 working dir --staging area -- Local Repo -- remote repo
+git merge master development
+git push -u origin development
 
  What is Git stash? (stack of unfinished changes)
  Often, when you’ve been working on part of your project, things are in a messy state and you want to switch branches 
@@ -38,7 +40,9 @@ How can you create a repository in Git?
 Git init
 
 refs/heads/master ---> refs/of/master
- 
+
+How do you configure a Git repository to run code sanity checking tools right before making commits, 
+and preventing them if the test fails?
  
  
  
