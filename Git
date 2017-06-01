@@ -31,6 +31,13 @@ git branch -a
 git log  remotes/origin/Development
 git merge origin/Development
 
+Delete a branch, first check out from the branch you want to delete and run -->
+git branch -d development
+
+Git stash
+Git stash list
+git stash apply
+gits stash drop <Stash_ID>
 Feature branching
 A feature branch model keeps all of the changes for a particular feature inside
 of a branch. When the feature is fully tested and validated by automated tests, the branch 
