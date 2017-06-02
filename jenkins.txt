@@ -1,0 +1,30 @@
+
+*     *     *   *    *        command to be executed
+-     -     -   -    -
+|     |     |   |    |
+|     |     |   |    +----- day of week (0 - 6) (Sunday=0)
+|     |     |   +------- month (1 - 12)
+|     |     +--------- day of month (1 - 31)
+|     +----------- hour (0 - 23)
++------------- min (0 - 59)
+
+Plugins are of extension HPI
+
+Add a Linux agent to jenkins (Add slave)
+login to slave system , install JDK 
+vi /ssh/sshd_config file and change PasswordAuthentication yes (default its no)
+now restart ssdh service --> service restart sshd
+adduser <UserName> --> provide password
+
+now go to jenkins
+add a node from manage jenkins
+provide name, Remote root directory --> existing dir path, 
+Launch method should be launch slave agent via SSH
+add host name and cedientials of the user u created
+
+
+JDK is a must for Jenkins -->  apt-get install -y default-jdk
+adduser slave
+allow password based authentication --> vi /etc/ssh/sshd_config 
+PasswordAuthentication yes
+service sshd restart
