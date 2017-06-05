@@ -28,3 +28,15 @@ adduser slave
 allow password based authentication --> vi /etc/ssh/sshd_config 
 PasswordAuthentication yes
 service sshd restart
+
+Code Quality and Code Coverage Metrics Report ---> 
+use 
+Checkstyle plugin to generate metrics and resolve the Warnings
+to use checkstyle plugin download the plugin and add checkstyle:checkstyle in build step --> invoke top level maven target
+
+or 
+PMD Plugin
+https://wiki.jenkins-ci.org/display/JENKINS/PMD+Plugin
+
+Findbugs Plugin
+https://wiki.jenkins-ci.org/display/JENKINS/FindBugs+Plugin
