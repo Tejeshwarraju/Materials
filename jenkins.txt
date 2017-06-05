@@ -38,5 +38,14 @@ or
 PMD Plugin
 https://wiki.jenkins-ci.org/display/JENKINS/PMD+Plugin
 
+Apache Ant:
+http://ant.apache.org/
+
+Ant Targets:
+http://ant.apache.org/manual/targets.html
+
+Gradle:
+https://docs.gradle.org/current/dsl/index.html
+
 Findbugs Plugin
 https://wiki.jenkins-ci.org/display/JENKINS/FindBugs+Plugin
