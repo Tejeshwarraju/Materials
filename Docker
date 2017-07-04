@@ -1,0 +1,11 @@
+FROM, CMD, ENTRYPOINT, VOLUME, ENV, RUN, MAINTAINER, EXPOSE, COPY
+
+Docker logs -f tomcat
+
+edit docker service if you want to trigger a contained from jenkins
+systemctl status docker ---> /lib/systemd/system/docker.service
+
+Execstart=  /usr/bin/dockred -H fd:// -H tcp://0.0.0.0:2735
+
+execute shell from jenkins job use CLOUD BEES Plugin
+docker -H tcp://<Private_IP> run -it -d --name tomcatapp -p 8080:8080 tejeshwar/trucks:${BUILD_NUMBER}
