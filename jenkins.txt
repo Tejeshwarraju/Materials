@@ -64,3 +64,6 @@ you need to add checkstyle:checkstyle
 to invoke toplevel target window
 
 you have PMB, Findbug plugin also for static code analysis
+
+Archive a Artifact
+Add post build Action and mention **/*.war -> which means archive all the war files under cirrent workspace
