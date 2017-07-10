@@ -56,3 +56,11 @@ eval $(ssh-agent -s)
 ssh-add ~/.ssh/id_rsa
 clip < ~/.ssh/id_rsa.pub
 Settings -> SSH and GPG keys -> New SSH key or Add SSH key - > add key -> click Add SSH key
+
+
+Static Code Analysis
+Jenkins Checkstyle plugin
+you need to add checkstyle:checkstyle
+to invoke toplevel target window
+
+you have PMB, Findbug plugin also for static code analysis
