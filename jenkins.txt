@@ -49,3 +49,10 @@ https://docs.gradle.org/current/dsl/index.html
 
 Findbugs Plugin
 https://wiki.jenkins-ci.org/display/JENKINS/FindBugs+Plugin
+
+
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rsa
+clip < ~/.ssh/id_rsa.pub
+Settings -> SSH and GPG keys -> New SSH key or Add SSH key - > add key -> click Add SSH key
