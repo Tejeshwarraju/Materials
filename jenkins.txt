@@ -67,3 +67,13 @@ you have PMB, Findbug plugin also for static code analysis
 
 Archive a Artifact
 Add post build Action and mention **/*.war -> which means archive all the war files under cirrent workspace
+
+Install Jenkins on ubuntu
+
+wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add -
+ 
+echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list
+ 
+apt-get update
+ 
+apt-get install jenkins
